@@ -1,0 +1,11 @@
+{
+	"name"				: "myext",
+	"version"			: "0.0.0",
+	"description"		: "Simple Extension Management App",
+	"main"				: "server.js",
+	"author"			: "Saleh",
+	"dependencies"		: {
+		"express"		: "~3.4.4",
+		"mongoose"		: "~3.6.2"
+	}
+}

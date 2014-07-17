@@ -35,8 +35,7 @@
 			<div class="col-sm-4 col-sm-offset-4">
 				<div class="checkbox" ng-repeat="mye in myexts">
 					<label>
-						<div class="alert alert-success">
-						<input type="checkbox" ng-click="deletemyext(mye._id)">
+						<div class="alert alert-success" ng-click="deletemyext(mye._id)">
 						{{ mye.name }} | {{ mye.ext}}</div>
 					</label>
 				</div>

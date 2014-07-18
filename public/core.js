@@ -24,9 +24,19 @@ function mainController($scope, $http) {
 			});
 	};
 
-	// delete a todo after checking it
 	$scope.deletemyext = function(id) {
 		$http.delete('/api/myext/' + id)
+			.success(function(data) {
+				$scope.myexts = data;
+				console.log(data);
+			})
+			.error(function(data) {
+				console.log('Error: ' + data);
+			});
+	};
+
+	$scope.findmyext = function(name) {
+		$http.get('/api/myext/' + name)
 			.success(function(data) {
 				$scope.myexts = data;
 				console.log(data);

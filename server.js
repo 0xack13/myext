@@ -28,10 +28,10 @@ app.get('/api/myext', function(req, res) {
 });
 
 // Find record by extension
-app.get('/api/myext/:myext_name', function(req, res) {
+app.get('/api/myext/:myextname', function(req, res) {
 
 	myexts.find({
-		'ext' : req.params.myext_name
+		ext : req.params.myextname
 	}, function(err, myext) {
 
 		if (err)

@@ -27,6 +27,20 @@ app.get('/api/myext', function(req, res) {
 	});
 });
 
+// Find record by extension
+app.get('/api/myext/:myext_name', function(req, res) {
+
+	myexts.find({
+		'ext' : req.params.myext_name
+	}, function(err, myext) {
+
+		if (err)
+			res.send(err)
+
+		res.json(myext);
+	});
+});
+
 app.post('/api/myext', function(req, res) {
 
 	myexts.create({

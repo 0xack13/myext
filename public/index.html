@@ -32,7 +32,7 @@
 		<!-- Extensions List -->
 		<div id="myext-list" class="row">
 			<div class="col-sm-4 col-sm-offset-4">
-				<div class="checkbox" ng-repeat="mye in myexts">
+				<div class="checkbox" ng-repeat="mye in myexts | filter:formData.name">
 					<label>
 						<div class="alert alert-success" ng-click="deletemyext(mye._id)">
 							{{ mye.name }} | {{ mye.ext}}
@@ -49,8 +49,8 @@
 				<form>
 					<fieldset>
 					<div class="form-group">
-						<input type="name" class="form-control input-lrg text-center edit-btn-large" placeholder="Name" ng-model="formData.name" ng-change="findmyext(formData.name)">
-						<input type="ext" class="form-control input-lrg text-center edit-btn-large" placeholder="Extension" ng-model="formData.ext" ng-change="findmyextbyNum(formData.ext)">
+						<input type="name" class="form-control input-lrg text-center edit-btn-large" placeholder="Name" ng-model="formData.name" >
+						<input type="ext" class="form-control input-lrg text-center edit-btn-large" placeholder="Extension" ng-model="formData.ext">
 					</div>
 				</fieldset>
 					<button type="submit" class="btn btn-primary btn-lg" ng-click="createmyext()">Add</button>

@@ -46,4 +46,15 @@ function mainController($scope, $http) {
 			});
 	};
 
+	$scope.findmyextbyNum = function(ext) {
+		$http.get('/api/myextbyNum/' + ext)
+			.success(function(data) {
+				$scope.myexts = data;
+				console.log(data);
+			})
+			.error(function(data) {
+				console.log('Error: ' + data);
+			});
+	};
+
 }

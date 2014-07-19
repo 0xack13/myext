@@ -49,11 +49,11 @@
 				<form>
 					<fieldset>
 					<div class="form-group">
-						<input type="name" class="form-control input-lrg text-center edit-btn-large" placeholder="Name" ng-model="formData.name"><input type="ext" class="form-control input-lrg text-center edit-btn-large" placeholder="Extension" ng-model="formData.ext">
+						<input type="name" class="form-control input-lrg text-center edit-btn-large" placeholder="Name" ng-model="formData.name" ng-change="findmyext(formData.name)">
+						<input type="ext" class="form-control input-lrg text-center edit-btn-large" placeholder="Extension" ng-model="formData.ext" ng-change="findmyextbyNum(formData.ext)">
 					</div>
 				</fieldset>
 					<button type="submit" class="btn btn-primary btn-lg" ng-click="createmyext()">Add</button>
-					<button type="submit" class="btn btn-primary btn-lg" ng-click="findmyext(formData.ext)">Search</button>
 				</form>
 			</div>
 		</div>

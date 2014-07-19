@@ -27,11 +27,36 @@ app.get('/api/myext', function(req, res) {
 	});
 });
 
-// Find record by extension
+// Find record by Name
 app.get('/api/myext/:myextname', function(req, res) {
 
 	myexts.find({
-		ext : req.params.myextname
+		name : req.params.myextname
+	}, function(err, myext) {
+
+		if (err)
+			res.send(err)
+
+		res.json(myext);
+	});
+});
+
+app.get('/api/myextbyNum', function(req, res) {
+
+	myexts.find(function(err, myext) {
+
+		if (err)
+			res.send(err)
+
+		res.json(myext);
+	});
+});
+
+// Find record by extension
+app.get('/api/myextbyNum/:myextext', function(req, res) {
+
+	myexts.find({
+		ext : req.params.myextext
 	}, function(err, myext) {
 
 		if (err)

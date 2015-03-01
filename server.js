@@ -2,6 +2,7 @@ var express  = require('express');
 var app      = express();
 var mongoose = require('mongoose');
 
+//mongodb connection
 mongoose.connect('mongodb://node:node@mongo.onmodulus.net:27017/uwO3mypu');
 
 app.configure(function() {

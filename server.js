@@ -3,8 +3,8 @@ var app      = express();
 var mongoose = require('mongoose');
 
 //mongodb connection
-mongoose.connect('mongodb://node:node@mongo.onmodulus.net:27017/uwO3mypu');
-
+//mongoose.connect('mongodb://node:node@mongo.onmodulus.net:27017/uwO3mypu');
+mongoose.connect('mongodb://test:test@ds045011.mongolab.com:45011/node');
 app.configure(function() {
 	app.use(express.static(__dirname + '/public')); 		
 	app.use(express.logger('dev'));
